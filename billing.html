@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Page</title>
+    <link rel="stylesheet" href="billing.css">
+    <link rel="stylesheet" href="http://fontawesome/icons.com">
+</head>
+<body>
+<!-- Header or Toolbar -->
+<div id="modeToggle" style="position: fixed; top: 10px; right: 10px;">
+    <!-- Main Button that toggles the dropdown -->
+    <button id="themeToggleButton"><i class="fa fa-area-chart" aria-hidden="true"></i> Toggle Theme</button>
+
+    <!-- Dropdown menu containing sub-buttons for light/dark mode -->
+    <div id="themeDropdown" style="display: none; position: absolute; right: 0; top: 35px; background-color: #fff; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
+        <button onclick="toggleMode('light')">Light Mode</button>
+        <button onclick="toggleMode('dark')">Dark Mode</button>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Section 1: Categories -->
+    <section class="category-section">
+        <h2>Categories</h2>
+        <div id="category-container">
+            <!-- Categories will be loaded here by JS -->
+        </div>
+    </section>
+
+    <!-- Section 2: Products -->
+    <section class="product-section">
+        <h2>Products</h2>
+        <div id="viewOptions" style="text-align: center; margin-bottom: 20px;">
+            <button onclick="toggleView('grid')">Grid View</button>
+            <button onclick="toggleView('list')">List View</button>
+        </div>
+        <div id="product-container">
+            <!-- Products will be loaded here by JS based on selected category -->
+        </div>
+    </section>
+
+    <!-- Section 3: Billing -->
+    <section class="billing-section">
+        <h2>Bill</h2>
+        <div id="bill-container">
+            <!-- Bill items will be displayed here -->
+        </div>
+        <div id="total-container">
+            <p>Total: $<span id="total-price">0.00</span></p>
+            <button id="generateBill" onclick="generateBill()">Generate Bill</button>
+            <button id="checkout-button" onclick="checkout()">Checkout</button>
+        </div>
+    </section>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="billing.js"></script>
+
+</body>
+</html>
